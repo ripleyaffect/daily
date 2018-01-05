@@ -27,18 +27,28 @@ class TreeNode(object):
 
 
 def get_left_index(index):
+    """Return index of this index's left child
+
+    :param index: `int` index of the node to get left child's index for
+
+    """
     return index * 2
 
 
 def get_right_index(index):
+    """Return index of this index's right child
+
+    :param index: `int` index of the node to get right child's index for
+
+    """
     return index * 2 + 1
 
 
 def serialize(node, index=1, tree_dict=None):
     """Return a serialized tree
 
-    We serialize a tree by keying a node's value by it's index in the "array
-    representaion" the tree, then recursively adding it's children at their
+    We serialize a tree by keying a node's value by its index in the "array
+    representaion" the tree, then recursively adding its children at their
     indices, if they exist.
 
     After all nodes have been added to the `tree_dict`, the result is
@@ -72,7 +82,7 @@ def deserialize(tree, index=1):
     """Return a deserialized tree
 
     We ingest a serialized version of the tree `dict` representaion,
-    deserialize it, then recurseivly create it's sub-trees, turning them back
+    deserialize it, then recurseivly create its sub-trees, turning them back
     into nodes.
 
     :param tree: `str` or `dict` representation of the tree
